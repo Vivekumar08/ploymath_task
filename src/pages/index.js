@@ -1,4 +1,4 @@
-import { auth, db } from './firebase'
+import { auth, db } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
