@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Polymath AI
+## _Next.js Programming Task_
 
-## Getting Started
 
-First, run the development server:
+## Tasks are performed 
 
-```bash
+- Ask the user to login (enable login with gmail through Firebase)
+- Make a call to any public/free APIs to fetch some data
+- Display this data on the screen
+- Add a button to save the data
+- On click, store the data in a Firebase table
+
+
+## Tech Used
+
+-  Next.js
+-  Firebase database in the backend
+-  Tailwind CSS for styling
+
+
+## Installation
+
+This requires [Node.js](https://nodejs.org/) v14+ to run.
+
+Clone this Github repo
+
+Install the dependencies and the start server.
+
+```sh
+cd ploymath_task
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After Compiled the code you can open your favorite web browser to see the results
+``` http://localhost:3000```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Working
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This task demonstrates Gmail login integration using Firebase authentication in a Nextjs application. The login functionality allows users to sign in using their Gmail accounts.
 
-## Learn More
+The process begins with initializing Firebase in the application by providing the Firebase configuration object. The Gmail login is handled using the Firebase authentication API. When the "Sign in with Google" button is clicked, a pop-up window is displayed, allowing users to authenticate themselves with their Gmail accounts. Once the authentication is successful, the user object is logged to the Home.
 
-To learn more about Next.js, take a look at the following resources:
+To ensure a seamless user experience, an authentication state listener is set up using the onAuthStateChanged method. This listener checks if the user is already signed in when the component mounts. If a user is detected, their details are logged to the Home, indicating that the user is already signed in.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Additionally, this task showcases the ability to store quotes in Firestore, a NoSQL cloud database provided by Firebase. After logging in, users can view a random quote fetched from an external free/public API. They also have the option to store the quote in Firestore by clicking the "Store Quote" button. The quote, along with the user's ID and the current timestamp, is saved in a separate collection called "quotes".
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To retrieve the stored quotes, a separate page called "Saved" fetches the quotes associated with the current user from Firestore and displays them on the page.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Overall, this task demonstrates the seamless integration of Gmail login using Firebase authentication in Nextjs and the capability to store and retrieve data in Firestore. It provides a solid foundation for incorporating user authentication and database operations in a Nextjs application.
